@@ -1,60 +1,27 @@
-/* #divWeatherMain{
-    display: block;
-    border-radius: 30px;
-    width: 260px;
-    height: 270px;
-    background: rgb(0,0,0);
-    background: linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(8,7,42,1) 75%, rgb(8, 10, 63) 100%);
-    color: white;;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-} */
-
 #divWeatherMain{
     margin: 100px auto;
     display: block;
-    /* border-radius: 30px; */
-    /* width: 30%; */
-    /* width: 100%; */
     width : 320px;
     max-height: 100vh;
-    /* max-height: 0vh; */
-    /* background: rgb(0,0,0);
-    background: linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(8,7,42,1) 75%, rgb(8, 10, 63) 100%); */
     background: url("/assets/images/bg_weather.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
     color: white;;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Segoe UI', Tahoma, Verdana, sans-serif;
 }
 .entete{
     display:flex;
     justify-content: space-between;
     margin: 0;  
     padding: 0;
-    /* background-color: aqua; */
 }
 .form-group{
-    /* margin: 50px auto; */
-   /* width: 30%; */
-    /* width:100px; */
-    /* float: right; */
+
     margin:0;
-    /* display: inline-flex; */
     display: flex;
-    /* padding-top: 20px; */
     justify-content: center;
-    /* width: auto; */
-    /* border: 2px solid rgb(237, 224, 224);
-    border-radius: 30px; */
     outline: none;
-    /* background-color: rgb(143, 175, 175); */
-    /* position: absolute;
-   
-    left: 50%;
-    transform: translate(-100%,100%); */
-    
-   
 }
 
  
@@ -66,10 +33,7 @@
     border: none;
     background-color: transparent;
     padding: 0;
-    /* line-height: 30px; */
     color: black;
-    /* border-radius: 30px; */
-    /* position: relative; */
     transition: all .9s  cubic-bezier(0.18, 0.89, 0.32, 1.25);
 }
 
@@ -83,8 +47,6 @@
 .form-group input :focus,
 .form-group input :valid
 {
- 
-    /* width: 100%; */
     width: 100px;
     max-height: 30px;
     /* background-color: white; */
@@ -99,13 +61,6 @@
     cursor: pointer;
     max-height: 30px;
     background-color: transparent;
- 
-    /* width: 20%; */
-    /* padding: 0; */
-    /* border-radius: 50%; */
-    /* padding: 7px 7px 7px 7px; */
-    /* position: absolute; */
-   
     color: white;
 }
 
@@ -122,10 +77,6 @@
     min-height: 90px;
 }
 
-/* .p1-col-g .isClouds, .rain{
-    padding-top: 70px;
-} */
-
 .p1-col-g .isClouds{
     margin-top: 30px;
     padding-bottom: 40px;
@@ -134,7 +85,6 @@
 .p1-col-g .rain{
     margin-top: 25px;
 }
-
 
 .weatherWidgetRow{
     display:block;
@@ -153,10 +103,6 @@
     color: white;
     filter: drop-shadow( 1px 1px 10px white);
 }
-
-/* .cloudDiv{
-    margin-top: -40px;
-} */
 
 .cloud{
     /* color: rgb(104, 175, 197);
@@ -184,7 +130,6 @@
 
 .container{
     padding: 10px 0; 
- 
 }
 
 .details{
@@ -237,10 +182,10 @@ td{
     font-size: clamp(0.7rem,1vw,0.8vw);
     /* background-color: aqua; */
 }
-
+/* 
 tr{
-   /* background-color: brown; */
-}
+   background-color: brown;
+} */
 
 
 .meteo{
@@ -252,16 +197,13 @@ tr{
 .isClouds {
     position: relative;
     /* width: 100%; */
- 
 }
 
 .isClouds .sun {
-   
     left: 50%;
     top : 50%;
     position: absolute;
     transform: translate(-50%,-70%);
-  
     /* background-color: aqua; */
 }
 
@@ -289,21 +231,17 @@ tr{
 .showers{
     color: rgb(96, 108, 111);
     filter: drop-shadow( 1px 1px 5px rgb(55, 88, 97));
- 
 }
 
 .temp{
     text-align: center;
-   
 }
 
 .rain {
    position: relative;
-   
 }
 
 .rain .cloudDark{
-    
     position: absolute;
     top:50%;
     left:50%;
@@ -312,7 +250,6 @@ tr{
 }
 
 .droplet{
- 
     position: relative;
     display: flex;
     padding-left: 40%;
@@ -321,7 +258,6 @@ tr{
 }
 
 .droplet span {
- 
     position: relative;
     /* background-color: aqua; */
     background-color: white;
