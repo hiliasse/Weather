@@ -3,7 +3,8 @@
     display: block;
     width : 320px;
     max-height: 100vh;
-    background: url("/assets/images/bg_weather.jpg");
+    /* background: url("/Weather/assets/images/bg_weather.jpg"); */
+    background: url("~/assets/images/bg_weather.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
