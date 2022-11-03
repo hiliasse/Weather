@@ -1,0 +1,235 @@
+<div id="divWeatherMain"> 
+    <div class="entete">
+        <span class = "p-0"> Météo France</span>
+        <div class="px-0">
+            <!-- {{DateAujoudhui|date:'short'}} -->
+        </div>
+        <div class="form-group  " >
+ 
+
+            <!-- <input  type='search'   [(ngModel)]="city"   (input)="getForcecastServiceByCity()"  placeholder=" Ville"> -->
+            <input  type='search'  [(ngModel)]="city" placeholder=" Ville">
+
+            <!-- <button class="btn btn-secondary" type="button" (click)="saveForm()" >Search</button> -->
+            <!-- <button class="btn btn-secondary" type="button" (click)="getForcecastServiceByCity($event)" >Search</button> -->
+            <!-- <button class="btn btn-secondary" type="button"  >Search</button> -->
+    
+            <button class = "buttonSearch"    (click)="getForcecastServiceByCity()">
+                <i class="fa-solid fa-magnifying-glass loup"></i>
+            </button>
+        </div>
+    </div>
+
+    <div class="row part1">
+        <div class="col-6 p1-col-g">
+            <div *ngIf="!WeatherData.isDay" class="weatherWidgetRow">
+                <i class="fas fa-3x fa-moon moon"></i>  
+            </div>   
+            <div *ngIf="isClouds && WeatherData.isDay" class=" isClouds ">
+                <i class="fas fa-3x fa-sun sun "></i>  
+                <i class="fas fa-cloud fa-3x cloud"></i>
+            </div>
+            <div *ngIf="isClear && WeatherData.isDay" class="weatherWidgetRow ">
+                <i class="fas fa-3x fa-sun sun "></i>  
+            </div>
+            <div *ngIf="isRain && WeatherData.isDay" class="rain">  
+                <i class="fa-solid fa-2x fa-cloud cloudDark"></i>                      
+                <div class="droplet">
+                    <span style="--i:12"> </span>
+                    <span style="--i:15"> </span>
+                    <span style="--i:17"> </span>
+                </div>
+            </div>
+            <div class="weatherTodayDescription py-3" >{{WeatherData.weather.description}}</div>
+        </div>
+        <div class="col-6 p1-col-d weatherToday">
+            <div class = "name " >{{WeatherData.name}},</div>
+            {{DateAujoudhui|date:'mediumDate'}}, {{DateAujoudhui|date:'shortTime'}}
+         
+            <div class = "tempcel my-2" >
+                <i class="fa fa-1x fa-thermometer-full" aria-hidden="true"></i>
+                {{WeatherData.temp_celcius}}°
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- <div class="weatherTodayDetails" style="font-size: 32px;margin-top: 5px;"> -->
+    <div class="container" >
+        <div class="row details " >
+            <div class="col col-g  ">
+                <div class="row r1  ">
+                    <div class="col r1-col-g"  >
+                       
+                        <!-- <i class="fa fa-check" aria-hidden="true"></i> -->
+
+                        <!-- <i class="fa-thin fa-sunset"></i> -->
+                        <!-- <i class="fa-sharp fa-solid fa-sunset"></i> -->
+                        sunrise
+                    </div>
+                    <!-- <div class="col-4 r1-col-d" style="background-color: rgb(255, 98, 0);"> -->
+                    <div class="col-4 r1-col-d"  > 
+                        {{WeatherData.sunrise_time}}  
+                    </div>
+                </div>
+                <div class="row r1  ">
+                    <div class="col r1-col-g"  >
+                        <!-- <i class="fa fa-thermometer-full" aria-hidden="true"></i> -->
+                        <i class="fa-solid fa-temperature-three-quarters"></i>
+                        T° max/min
+                    
+
+                    </div>
+                    <div class="col-4 r1-col-d" >
+                        {{WeatherData.temp_max}}°/{{WeatherData.temp_min}}°  
+                    </div>
+                </div>
+                <!-- <div class="row r1">
+                    <div class="col r1-col-g" style="background-color: rgb(255, 0, 38);">
+                        Vent
+                    </div>
+                    <div class="col-4 r1-col-d" style="background-color: rgb(255, 98, 0);">
+                        {{WeatherData.wind.speed}} Km/h
+                    </div>
+                </div> -->
+            </div>
+            <div class="col col-d">
+                <div class="row r1">
+                    <div class="col r1-col-g"  >
+                        sunset
+                    </div>
+                    <div class="col-4 r1-col-d"  >
+                        {{WeatherData.sunset_time}}
+                    </div>
+                </div>
+                <!-- <div class="row r1">
+                    <div class="col r1-col-g" style="background-color: rgb(255, 0, 234);">
+                        T°.ressentie 
+                    </div>
+                    <div class="col-4 r1-col-d" style="background-color: rgb(144, 0, 255);">
+                        {{WeatherData.temp_feels_like}}° 
+                    </div>
+                </div> -->
+                <div class="row r1">
+                    <div class="col r1-col-g"  >
+                        <i class="fa-solid fa-wind"></i>
+                        Vent
+                    </div>
+                    <div class="col-4 r1-col-d"  >
+                        {{WeatherData.wind.speed}} Km/h
+                    </div>
+                </div>
+            </div>
+        </div>
+<!--     
+        <div class="details px-5"  >
+         <p class = "">  Temp.ressentie   {{WeatherData.temp_feels_like}}°</p>   
+        </div> -->
+    
+        <!-- <div class="details px-5"  >
+            Humidity  {{WeatherData.main.humidity}}%
+        </div> -->
+          
+        <!-- <ul>
+            <li>
+                <a> T° max/min  {{WeatherData.temp_min}}° / {{WeatherData.temp_max}}°</a>
+            </li>
+            <li>
+                <a> Temp.ressentie  {{WeatherData.temp_feels_like}}°</a>
+            </li>
+            <li>
+                <a> Humidity  {{WeatherData.main.humidity}}%</a>
+            </li>
+        </ul> -->
+    </div>
+
+    <div class="forecast">
+        <ng-container *ngFor = "let w of weather; index as i" class = "ng-container p-5">
+
+          <table style="width:100%">            
+             <tr >
+                <!-- <td  style="background-color: rgb(98, 0, 255)"> {{w.dt_txt|date:'EEEE':undefined:'fr'}} </td> -->
+                <td class="jour" > {{w.dt_txt|date:'EEEE'}} </td>
+                <!-- <td  class="meteo"  style="background-color: rgb(0, 255, 30)"> -->
+                <td  class="meteo"   >
+            
+                        <div *ngIf="w.isClouds" class=" isClouds">
+                            <i class="fas fa-2x fa-sun sun "></i> 
+                            <i class="fas fa-2x  fa-cloud cloud "></i>
+                        </div>
+                        <div *ngIf="w.isClear" class="isClear">
+                            <i class="fas fa-2x fa-sun sun m-0 "></i> 
+                        </div>
+                        <div *ngIf="w.isRain" class="rain">  
+                                <i class="fa-solid fa-2x fa-cloud cloudDark"></i>                      
+                            <div class="droplet">
+                                <span style="--i:12"> </span>
+                                <span style="--i:15"> </span>
+                                <span style="--i:17"> </span>
+                            </div>
+
+                            <!-- <i class=" fas  fa-3x fa-cloud-showers-heavy showers"></i> -->
+                            <!-- <img src="assets/images/pluie.gif" class="pluie " alt="Paris" > -->   
+                        </div>
+                     <!-- <i class="fas fa-3x fa-sun sun "></i>   -->
+                </td>   
+                <td class = "temp">                   
+                     {{w.temp_max}}° 
+                </td>                 
+                <td class ="temp"> 
+                     {{w.temp_min}}° 
+                </td>
+ 
+             </tr>
+    
+          </table>  
+
+          <!-- <table style="width:100%">
+            <tr>
+              <th>Firstname</th>
+              <th>Lastname</th> 
+              <th>Age</th>
+            </tr>
+            <tr>
+              <td>Jill</td>
+              <td>Smith</td>
+              <td>50</td>
+            </tr>
+            <tr>
+              <td>Eve</td>
+              <td>Jackson</td>
+              <td>94</td>
+            </tr>
+            <tr>
+              <td>John</td>
+              <td>Doe</td>
+              <td>80</td>
+            </tr>
+          </table> -->
+        
+
+        </ng-container>
+
+    </div>
+</div>
+
+
+<!-- <div class="row" style="background-color: red;" >
+
+    <div class="col-6" style="background-color: yellow;">
+        <div class="row">
+            <div class="col-3 col-sm-3 col-lg-3 " style="background-color: rgb(0, 234, 255);">
+                T° max/min
+            </div>
+            <div class="col-3 col-sm-3 col-lg-3  " style="background-color: rgb(81, 0, 255);">
+                {{WeatherData.temp_min}}° / {{WeatherData.temp_max}}°  
+            </div>
+        </div>
+
+    </div>
+
+    <div class="col-6" style="background-color: rgb(0, 255, 153);">
+
+    </div>
+</div> -->

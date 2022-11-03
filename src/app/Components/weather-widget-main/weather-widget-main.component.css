@@ -1,0 +1,370 @@
+/* #divWeatherMain{
+    display: block;
+    border-radius: 30px;
+    width: 260px;
+    height: 270px;
+    background: rgb(0,0,0);
+    background: linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(8,7,42,1) 75%, rgb(8, 10, 63) 100%);
+    color: white;;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+} */
+
+#divWeatherMain{
+    margin: 100px auto;
+    display: block;
+    /* border-radius: 30px; */
+    /* width: 30%; */
+    /* width: 100%; */
+    width : 320px;
+    max-height: 100vh;
+    /* max-height: 0vh; */
+    /* background: rgb(0,0,0);
+    background: linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(8,7,42,1) 75%, rgb(8, 10, 63) 100%); */
+    background: url("/assets/images/bg_weather.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    color: white;;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.entete{
+    display:flex;
+    justify-content: space-between;
+    margin: 0;  
+    padding: 0;
+    /* background-color: aqua; */
+}
+.form-group{
+    /* margin: 50px auto; */
+   /* width: 30%; */
+    /* width:100px; */
+    /* float: right; */
+    margin:0;
+    /* display: inline-flex; */
+    display: flex;
+    /* padding-top: 20px; */
+    justify-content: center;
+    /* width: auto; */
+    /* border: 2px solid rgb(237, 224, 224);
+    border-radius: 30px; */
+    outline: none;
+    /* background-color: rgb(143, 175, 175); */
+    /* position: absolute;
+   
+    left: 50%;
+    transform: translate(-100%,100%); */
+    
+   
+}
+
+ 
+.form-group input{
+   
+    margin: 0;
+    outline: none;
+    width: 0;
+    border: none;
+    background-color: transparent;
+    padding: 0;
+    /* line-height: 30px; */
+    color: black;
+    /* border-radius: 30px; */
+    /* position: relative; */
+    transition: all .9s  cubic-bezier(0.18, 0.89, 0.32, 1.25);
+}
+
+
+.form-group input::placeholder{
+ 
+    text-align: center;
+}
+
+.form-group:hover input,
+.form-group input :focus,
+.form-group input :valid
+{
+ 
+    /* width: 100%; */
+    width: 100px;
+    max-height: 30px;
+    /* background-color: white; */
+    background-color: #2f4858;
+    color: white;
+   
+}
+
+.buttonSearch  {
+    outline: none;
+    border: none;
+    cursor: pointer;
+    max-height: 30px;
+    background-color: transparent;
+ 
+    /* width: 20%; */
+    /* padding: 0; */
+    /* border-radius: 50%; */
+    /* padding: 7px 7px 7px 7px; */
+    /* position: absolute; */
+   
+    color: white;
+}
+
+ 
+
+.part1{
+    margin: 0;
+    padding: 0;
+    padding-top: 15%;
+    align-items: center;
+}
+
+.p1-col-g{
+    min-height: 90px;
+}
+
+/* .p1-col-g .isClouds, .rain{
+    padding-top: 70px;
+} */
+
+.p1-col-g .isClouds{
+    margin-top: 30px;
+    padding-bottom: 40px;
+}
+
+.p1-col-g .rain{
+    margin-top: 25px;
+}
+
+
+.weatherWidgetRow{
+    display:block;
+    margin:0 auto;
+    width: fit-content; 
+}
+
+.sun{
+    margin-top: 10px;
+    color: yellow;
+    filter: drop-shadow( 1px 1px 10px yellow);
+}
+
+.moon{
+    margin-top: 10px;
+    color: white;
+    filter: drop-shadow( 1px 1px 10px white);
+}
+
+/* .cloudDiv{
+    margin-top: -40px;
+} */
+
+.cloud{
+    /* color: rgb(104, 175, 197);
+    filter: drop-shadow( 1px 1px 5px rgb(104, 175, 197)); */
+    color: rgb(166, 185, 191);
+    filter: drop-shadow( 1px 1px 5px rgb(104, 175, 197));
+    animation-name: cloudMovement;
+    animation-iteration-count: infinite;
+    animation-duration: 10s;
+    animation-timing-function: ease-in-out;
+    animation-direction: alternate;
+}
+.weatherTodayDescription{
+     
+    font-size: clamp(1rem,1vw,1vw);
+    text-align: center;
+}
+
+.weatherToday{
+    margin: 0;
+    font-size: clamp(1rem,1vw,1.8vw);
+    /* text-align: center; */
+}
+
+
+.container{
+    padding: 10px 0; 
+ 
+}
+
+.details{
+    margin: 0;
+    font-size: clamp(0.7rem,0.6vw,0.7vw);
+    max-height: 100px ;
+}
+
+.col-g{
+     padding: 0;
+     padding-left: 15px;
+}
+
+.col-d{
+    padding: 0;
+    padding-left: 10px;
+    padding-right: 5px;
+}
+   
+.r1{
+    margin: 0; 
+    max-height: 40px ;
+}
+.r1-col-g{
+    padding: 0;
+    align-items: center;
+}
+.r1-col-d{
+    padding: 0;
+}
+
+
+.forecast{
+    margin: 0;
+    border-top: 2px solid rgb(193, 218, 230);
+    padding:  10px 0;
+    /* background-color: rgb(255, 0, 0); */
+    border-bottom: 2px solid rgb(193, 218, 230);
+    
+}
+
+.jour{
+    width: 30%;
+}
+
+td{
+    padding-top: 10px;
+    padding-left: 15px;
+    padding-bottom: 10px;
+    font-size: clamp(0.7rem,1vw,0.8vw);
+    /* background-color: aqua; */
+}
+
+tr{
+   /* background-color: brown; */
+}
+
+
+.meteo{
+    width: 30%;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.isClouds {
+    position: relative;
+    /* width: 100%; */
+ 
+}
+
+.isClouds .sun {
+   
+    left: 50%;
+    top : 50%;
+    position: absolute;
+    transform: translate(-50%,-70%);
+  
+    /* background-color: aqua; */
+}
+
+.isClouds .cloud {
+    
+    left: 50%;
+    top : 50%;
+    position: absolute;
+    transform: translate(-30%,-50%);
+    /* animation-name: cloudMovement; */
+ 
+}
+
+.isClear {
+    position: relative;
+ }
+ 
+.isClear .sun{
+   position: absolute;
+   left: 50%;
+   top : 50%;
+   transform: translate(-50%,-50%);
+}
+
+.showers{
+    color: rgb(96, 108, 111);
+    filter: drop-shadow( 1px 1px 5px rgb(55, 88, 97));
+ 
+}
+
+.temp{
+    text-align: center;
+   
+}
+
+.rain {
+   position: relative;
+   
+}
+
+.rain .cloudDark{
+    
+    position: absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+    color: rgb(96, 108, 111);
+}
+
+.droplet{
+ 
+    position: relative;
+    display: flex;
+    padding-left: 40%;
+    padding-top: 10%;
+    
+}
+
+.droplet span {
+ 
+    position: relative;
+    /* background-color: aqua; */
+    background-color: white;
+    width: 5px;
+    height: 5px;
+    z-index: 1;
+    margin: 0 2px;
+    border-radius: 50%;
+    /* animation-name: rainMovement;
+    animation-iteration-count: infinite;
+    animation-duration: var(20s/--i);
+    animation-timing-function: ease-in-out; */
+    animation: rainMovement 2s ease  infinite normal forwards;
+    animation-duration: calc(15s/var(--i));
+   
+ 
+}
+
+@keyframes rainMovement {
+    0%{
+        transform: translateY(0) scale(0.3);
+        opacity: 1;
+  
+    }
+    70% {
+        transform: translateY(20px) scale(0.3);
+        /* opacity: 0; */
+    }
+    100%{
+        scale: (0.2);
+        opacity: 0;
+    }
+}
+
+@keyframes cloudMovement{
+    from{margin-left: -30px;}
+    to{margin-left: 10px;}
+}
+
+
+
+/* @keyframes cloudMovement{
+    from{margin-left: -55px;}
+    to{margin-left: 65px;}
+} */
+
