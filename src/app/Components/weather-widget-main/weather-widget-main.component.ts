@@ -27,7 +27,7 @@ export class WeatherWidgetMainComponent implements OnInit,OnDestroy {
   dateTodayFinal : string = "";
   listDateTemp = [{ date : "", tmin : "" , tmax : ""}];
 
-  city: string;
+  city: string = "Paris";
   code: string;
   isDay: true;
   tmpMax : string = "0";
@@ -54,12 +54,15 @@ export class WeatherWidgetMainComponent implements OnInit,OnDestroy {
       weather : {},
       wind : {}
     };
-    this.city = "Paris";
+
+
     this.getWeatherData( );
     this.getForecastData();
     
-   
+    
   }
+
+
 
   getWeatherData( ){
 
@@ -87,6 +90,7 @@ export class WeatherWidgetMainComponent implements OnInit,OnDestroy {
     // console.log(" sunrise_time localtime : " + this.WeatherData.sunrise_time );
 
     let currentDate = new Date();
+    
     this.WeatherData.isDay = (currentDate.getTime() < sunsetTime.getTime());
     this.WeatherData.temp_celcius = (this.WeatherData.main.temp - 273.15).toFixed(0);
     this.WeatherData.temp_min = (this.WeatherData.main.temp_min - 273.15).toFixed(0);
@@ -95,6 +99,8 @@ export class WeatherWidgetMainComponent implements OnInit,OnDestroy {
     this.WeatherData.wind.speed = (this.WeatherData.wind.speed *3.6).toFixed();
     this.WeatherData.weather.main = this.WeatherData.weather[0].main;
     this.WeatherData.weather.description = this.WeatherData.weather[0].description;
+    this.WeatherData.name =  this.WeatherData.name;
+
     switch (this.WeatherData.weather.main) {
       case "Clear" :
         this.isClear = true;

@@ -1,8 +1,13 @@
 #divWeatherMain{
     margin: 100px auto;
     display: block;
-    width : 320px;
-    max-height: 100vh;
+    /* width : 320px; */
+    min-width : 320px;
+    max-width: 425px;
+    /* min-height: 700px;
+    max-height: 900px;  */
+    /* height: fit-content; */
+    /* max-height: 100vh; */
     /* background: url("/Weather/assets/images/bg_weather.jpg"); */
     background: url("~/assets/images/bg_weather.jpg");
     background-repeat: no-repeat;
@@ -298,6 +303,33 @@ tr{
     to{margin-left: 10px;}
 }
 
+
+@media (max-width : 425px) and  (min-width : 350px){
+    .weatherTodayDescription{
+     
+        font-size:1.2rem;
+    }
+
+    .weatherToday{
+
+        font-size:1.2rem;
+    }
+    
+    .details{
+
+        /* font-size: clamp(0.7rem,0.6vw,0.7vw); */
+        font-size:0.9rem;
+        /* max-height: 100px ; */
+    }
+
+
+    td{
+        font-size:1rem;
+        /* font-size: clamp(0.7rem,1vw,0.8vw); */
+        /* width: 20%; */
+        /* background-color: aqua; */
+    }
+}
 
 
 /* @keyframes cloudMovement{
