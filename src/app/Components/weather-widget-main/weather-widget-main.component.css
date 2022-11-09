@@ -4,6 +4,7 @@
     /* width : 320px; */
     min-width : 320px;
     max-width: 425px;
+    min-height: 60vh;
     /* min-height: 700px;
     max-height: 900px;  */
     /* height: fit-content; */
@@ -312,13 +313,13 @@ tr{
 
     .weatherToday{
 
-        font-size:1.2rem;
+        font-size:1.1rem;
     }
     
     .details{
 
         /* font-size: clamp(0.7rem,0.6vw,0.7vw); */
-        font-size:0.9rem;
+        font-size:0.8rem;
         /* max-height: 100px ; */
     }
 
